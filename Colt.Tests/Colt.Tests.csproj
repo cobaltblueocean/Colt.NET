@@ -112,9 +112,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Colt\Cern.csproj">
+    <ProjectReference Include="..\Colt\Cern.Colt.csproj">
       <Project>{96a33131-26f7-40c5-a095-031d0a77ea89}</Project>
-      <Name>Cern</Name>
+      <Name>Cern.Colt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

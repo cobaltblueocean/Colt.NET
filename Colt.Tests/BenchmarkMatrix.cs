@@ -55,122 +55,124 @@ namespace Colt.Tests
 
             String filename = path + "MatrixBenchmarkTest.txt";
 
-            writer = new StreamWriter(filename);
+            using (writer = new StreamWriter(filename))
+            {
 
-            int n = args.Length;
-            if (n == 0 || (n <= 1 && args[0].Equals("-help")))
-            { // overall help
-                writer.WriteLine(usage());
-                return;
-            }
-            if (args[0].Equals("-help"))
-            { // help on specific command
-                if (commands().IndexOf(args[1]) < 0)
-                {
-                    writer.WriteLine(args[1] + ": no such command available.\n" + usage());
+                int n = args.Length;
+                if (n == 0 || (n <= 1 && args[0].Equals("-help")))
+                { // overall help
+                    writer.WriteLine(usage());
+                    return;
+                }
+                if (args[0].Equals("-help"))
+                { // help on specific command
+                    if (commands().IndexOf(args[1]) < 0)
+                    {
+                        writer.WriteLine(args[1] + ": no such command available.\n" + usage());
+                    }
+                    else
+                    {
+                        writer.WriteLine(usage(args[1]));
+                    }
+                    return;
+                }
+
+                writer.WriteLine("Colt Matrix benchmark running on\n");
+                writer.WriteLine(BenchmarkKernel.SystemInfo2() + "\n");
+
+
+                string assemblyVersion = Assembly.Load("Cern.Colt").GetName().Version.ToString();
+
+                writer.WriteLine("Colt Version is " + assemblyVersion + "\n");
+
+                Timer timer = new Timer();
+                timer.Start();
+                if (!args[0].Equals("-file"))
+                { // interactive mode, commands supplied via java class args
+                    writer.WriteLine("\n\nExecuting command = [" + String.Join(",", args) + "] ..");
+                    handle(args);
                 }
                 else
-                {
-                    writer.WriteLine(usage(args[1]));
-                }
-                return;
-            }
-
-            writer.WriteLine("Colt Matrix benchmark running on\n");
-            writer.WriteLine(BenchmarkKernel.SystemInfo2() + "\n");
-
-
-            string assemblyVersion = Assembly.Load("Cern").GetName().Version.ToString();
-
-            writer.WriteLine("Colt Version is " + assemblyVersion + "\n");
-
-            Timer timer = new Timer();
-            timer.Start();
-            if (!args[0].Equals("-file"))
-            { // interactive mode, commands supplied via java class args
-                writer.WriteLine("\n\nExecuting command = " + new List<Object>(args) + " ..");
-                handle(args);
-            }
-            else
-            { // batch mode, read commands from file
-              /* 
-              parse command file in args[0]
-              one command per line (including parameters)
-              for example:
-              // dgemm dense 2 2.0 false true 0.999 10 30 50 100 250 500 1000
-              dgemm dense 2 2.5 false true 0.999 10 50 
-              dgemm sparse 2 2.5 false true 0.001 500 1000  
-              */
-                StreamReader reader = null;
-                try
-                {
-                    reader = new StreamReader(args[1]);
-                }
-                catch (IOException exc) { throw new SystemException(exc.Message); }
-
-                StreamTokenizer stream = new StreamTokenizer(reader);
-                //stream.eolIsSignificant(true);
-                //stream.SlashSlashComments(true); // allow // comments
-                //stream.SlashStarComments(true);  // allow /* comments */
-                try
-                {
-                    var words = new List<Object>();
-                    int token;
-                    while ((token = stream.nextToken()) != StreamTokenizer.TT_EOF)
-                    { // while not end of file
-                        if (token == StreamTokenizer.TT_EOL)
-                        { // execute a command line at a time
-                          //writer.WriteLine(words);
-                            if (words.Count > 0)
-                            { // ignore emty lines
-                                String[] parameters = new String[words.Count];
-                                for (int i = 0; i < words.Count; i++) parameters[i] = (String)words[i];
-
-                                // execute command
-                                writer.WriteLine("\n\nExecuting command = " + words + " ..");
-                                handle(parameters);
-                            }
-                            words.Clear();
-                        }
-                        else
-                        {
-                            String word;
-                            var formatter = new Cern.Colt.Matrix.Implementation.FormerFactory().Create("%G");
-                            // ok: 2.0 -> 2   wrong: 2.0 -> 2.0 (kills int.Parse())
-                            if (token == StreamTokenizer.TT_NUMBER)
-                                word = formatter.form(stream.Nval);
-                            else
-                                word = stream.Sval;
-                            if (word != null) words.Add(word);
-                        }
-                    }
-                    reader.Close();
-
-                    writer.WriteLine("\nCommand file name used: " + args[1] + "\nTo reproduce and compare results, here it's contents:");
+                { // batch mode, read commands from file
+                  /* 
+                  parse command file in args[0]
+                  one command per line (including parameters)
+                  for example:
+                  // dgemm dense 2 2.0 false true 0.999 10 30 50 100 250 500 1000
+                  dgemm dense 2 2.5 false true 0.999 10 50 
+                  dgemm sparse 2 2.5 false true 0.001 500 1000  
+                  */
+                    StreamReader reader = null;
                     try
                     {
                         reader = new StreamReader(args[1]);
                     }
                     catch (IOException exc) { throw new SystemException(exc.Message); }
 
-                    /*InputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream(args[1])));
-                    BufferedReader d
-                                   = new BufferedReader(new InputStreamReader(in));
-                                   */
-                    String line;
-                    while ((line = reader.ReadLine()) != null)
-                    { // while not end of file
-                        writer.WriteLine(line);
+                    StreamTokenizer stream = new StreamTokenizer(reader);
+                    //stream.eolIsSignificant(true);
+                    //stream.SlashSlashComments(true); // allow // comments
+                    //stream.SlashStarComments(true);  // allow /* comments */
+                    try
+                    {
+                        var words = new List<Object>();
+                        int token;
+                        while ((token = stream.nextToken()) != StreamTokenizer.TT_EOF)
+                        { // while not end of file
+                            if (token == StreamTokenizer.TT_EOL)
+                            { // execute a command line at a time
+                              //writer.WriteLine(words);
+                                if (words.Count > 0)
+                                { // ignore emty lines
+                                    String[] parameters = new String[words.Count];
+                                    for (int i = 0; i < words.Count; i++) parameters[i] = (String)words[i];
+
+                                    // execute command
+                                    writer.WriteLine("\n\nExecuting command = " + words + " ..");
+                                    handle(parameters);
+                                }
+                                words.Clear();
+                            }
+                            else
+                            {
+                                String word;
+                                var formatter = new Cern.Colt.Matrix.Implementation.FormerFactory().Create("%G");
+                                // ok: 2.0 -> 2   wrong: 2.0 -> 2.0 (kills int.Parse())
+                                if (token == StreamTokenizer.TT_NUMBER)
+                                    word = formatter.form(stream.Nval);
+                                else
+                                    word = stream.Sval;
+                                if (word != null) words.Add(word);
+                            }
+                        }
+                        reader.Close();
+
+                        writer.WriteLine("\nCommand file name used: " + args[1] + "\nTo reproduce and compare results, here it's contents:");
+                        try
+                        {
+                            reader = new StreamReader(args[1]);
+                        }
+                        catch (IOException exc) { throw new SystemException(exc.Message); }
+
+                        /*InputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream(args[1])));
+                        BufferedReader d
+                                       = new BufferedReader(new InputStreamReader(in));
+                                       */
+                        String line;
+                        while ((line = reader.ReadLine()) != null)
+                        { // while not end of file
+                            writer.WriteLine(line);
+                        }
+                        reader.Close();
+
                     }
-                    reader.Close();
-
+                    catch (IOException exc) { throw new SystemException(exc.Message); }
                 }
-                catch (IOException exc) { throw new SystemException(exc.Message); }
-            }
 
-            writer.WriteLine("\nProgram execution took a total of " + timer.Minutes() + " minutes.");
-            writer.WriteLine("Good bye.");
-        }
+                writer.WriteLine("\nProgram execution took a total of " + timer.Minutes() + " minutes.");
+                writer.WriteLine("Good bye.");
+            }
+    }
 
         /// <summary>
         /// Not yet documented.
