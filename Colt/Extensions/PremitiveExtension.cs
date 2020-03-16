@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class PremitiveExtensions
+    public static class PremitiveExtension
     {
         public static int FloatToIntBits(this float value)
         {

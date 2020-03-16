@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class ListExtensions
+    public static class ListExtension
     {
         public static void EnsureCapacity<T>(this List<T> list, int minCapacity)
         {

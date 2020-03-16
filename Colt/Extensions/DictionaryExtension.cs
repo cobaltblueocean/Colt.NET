@@ -7,7 +7,7 @@ using Cern.Colt;
 
 namespace System.Collections.Generic
 {
-    public static class DictionaryExtensions
+    public static class DictionaryExtension
     {
 
         public static void AddOrUpdate<T1, T2>(this Dictionary<T1, T2> originalDictionary, T1 key, T2 value)

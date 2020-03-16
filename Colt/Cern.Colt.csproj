@@ -180,13 +180,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Colt\Utility\WindowsFoundationLibrary.cs" />
-    <Compile Include="Extensions\ArrayExtensions.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
-    <Compile Include="Extensions\EnumeratorExtensions.cs" />
-    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\ArrayExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
+    <Compile Include="Extensions\EnumeratorExtension.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
-    <Compile Include="Extensions\PremitiveExtensions.cs" />
+    <Compile Include="Extensions\PremitiveExtension.cs" />
     <Compile Include="Hep\Aida\Bin\AbstractBin.cs" />
     <Compile Include="Hep\Aida\Bin\AbstractBin1D.cs" />
     <Compile Include="Hep\Aida\Bin\BinFunction1D.cs" />

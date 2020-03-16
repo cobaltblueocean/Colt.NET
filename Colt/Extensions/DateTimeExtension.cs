@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class DateTimeExtensions
+    public static class DateTimeExtension
     {
         public static Int64 GetTime(this DateTime d)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class EnumeratorExtensions
+    public static class EnumeratorExtension
     {
         public static T Next<T>(this IEnumerator<T> source)
         {

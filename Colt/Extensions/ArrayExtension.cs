@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class ArrayExtensions
+    public static class ArrayExtension
     {
         public static T[] EnsureCapacity<T>(this T[] array, int minCapacity)
         {

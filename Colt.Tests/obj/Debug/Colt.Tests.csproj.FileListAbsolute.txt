@@ -33,11 +33,9 @@ C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualSt
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Colt.Tests.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Colt.Tests.pdb
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Cern.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\nunit.framework.dll
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Cern.pdb
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\nunit.framework.pdb
@@ -45,3 +43,5 @@ C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\nunit.framework.xm
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\obj\Debug\Colt.Tests.csproj.CopyComplete
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\obj\Debug\Colt.Tests.dll
 C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\obj\Debug\Colt.Tests.pdb
+C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Cern.Colt.dll
+C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\bin\Debug\Cern.Colt.pdb
