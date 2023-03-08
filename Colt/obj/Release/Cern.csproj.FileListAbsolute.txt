@@ -1,3 +1,0 @@
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Release\Cern.csprojResolveAssemblyReference.cache
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Release\Colt.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Release\Colt.pdb

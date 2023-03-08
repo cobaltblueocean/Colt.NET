@@ -1,5 +1,0 @@
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\bin\Debug\Colt.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\bin\Debug\Colt.pdb
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Debug\Colt.csprojResolveAssemblyReference.cache
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Debug\Colt.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt\obj\Debug\Colt.pdb
