@@ -1,9 +1,0 @@
-AIDA 2D Histogram (projectionX):
-   Entries=10000, ExtraEntries=0
-   Mean=NaN, Rms=NaN
-   MinBinHeight=0, MaxBinHeight=10000
-   Axis: Bins=3, Min=-30, Max=1000
-Heights:
-     | -30 0     30
--------------------
-Data | 0   10000 0 

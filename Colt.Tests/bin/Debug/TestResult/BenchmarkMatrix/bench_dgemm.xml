@@ -1,5 +1,0 @@
-dgemm
-   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-   at System.Int32.Parse(String s)
-   at Colt.Tests.BenchmarkMatrix.bench_dgemm(String[] args) in C:\Users\Mercury21\Source\Repos\Colt.NET\Colt.Tests\BenchmarkMatrix.cs:line 194
