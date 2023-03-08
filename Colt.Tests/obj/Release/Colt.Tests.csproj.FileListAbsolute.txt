@@ -1,9 +1,0 @@
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\Colt.Tests.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\Colt.Tests.pdb
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\Colt.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\nunit.framework.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\Colt.pdb
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\bin\Release\nunit.framework.xml
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\obj\Release\Colt.Tests.csprojResolveAssemblyReference.cache
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\obj\Release\Colt.Tests.dll
-C:\Users\Mercury21\Documents\Source\Repos\colt\Colt.Tests\obj\Release\Colt.Tests.pdb
