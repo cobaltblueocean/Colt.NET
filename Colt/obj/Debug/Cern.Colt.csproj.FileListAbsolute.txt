@@ -1,7 +1,0 @@
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\bin\Debug\Cern.Colt.dll
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\bin\Debug\Cern.Colt.pdb
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\obj\Debug\Cern.Colt.csprojAssemblyReference.cache
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\obj\Debug\Cern.Properties.Resources.resources
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\obj\Debug\Cern.Colt.csproj.GenerateResource.cache
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\obj\Debug\Cern.Colt.dll
-C:\Users\Mercury21\Source\Repos\Colt.NET\Colt\obj\Debug\Cern.Colt.pdb
